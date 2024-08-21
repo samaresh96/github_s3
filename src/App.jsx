@@ -125,7 +125,7 @@ const App = () => {
               <th className="btn">Hobby</th>
               <th className="btn">Email</th>
               <th className="btn">Desire</th>
-              <th className="btn">Activity</th>
+              <th className="btn">Demo</th>
               <th className="btn">Actions</th>
               
             </tr>
