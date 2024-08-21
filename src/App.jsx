@@ -6,7 +6,7 @@ const App = () => {
 
   const [contacts, setContacts] = useState([]);
 
-  const [formData, setFormData] = useState({ name: '', age: '', hobby: '', email: '', desire: '' });
+  const [formData, setFormData] = useState({ name: '', age: '', hobby: '', email: '', desire: '' , activity:''});
 
   const [editIndex, setEditIndex] = useState(null);
 
@@ -17,7 +17,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.age || !formData.hobby || !formData.email || !formData.desire) {
+    if (!formData.name || !formData.age || !formData.hobby || !formData.email || !formData.desire || !formData.activity) {
       alert("fill in all the blanks")
       return;
     }
@@ -29,7 +29,7 @@ const App = () => {
     } else {
       setContacts((prevContacts) => [...prevContacts, formData]);
     }
-    setFormData({ name: '', age: '', hobby: '', email: '', desire: '' });
+    setFormData({ name: '', age: '', hobby: '', email: '', desire: '', activity: ''});
 
   };
 
@@ -99,6 +99,17 @@ const App = () => {
               className="btn-primary"
             />
           </div>
+          <div className="input_btn">
+            <input
+              type="text"
+              name="activity"
+              value={formData.activity}
+              onChange={handleInputChange}
+              placeholder="Activity"
+              className="btn-primary"
+            />
+          </div>
+         
         </div>
         <button type="submit" className="save_update">
           {editIndex !== null ? 'Save' : 'Submit'}
@@ -114,7 +125,9 @@ const App = () => {
               <th className="btn">Hobby</th>
               <th className="btn">Email</th>
               <th className="btn">Desire</th>
+              <th className="btn">Activity</th>
               <th className="btn">Actions</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -125,6 +138,7 @@ const App = () => {
                 <td className="btn">{contact.hobby}</td>
                 <td className="btn">{contact.email}</td>
                 <td className="btn">{contact.desire}</td>
+                <td className="btn">{contact.activity}</td>
                 <td className="btn">
                   <button
                     onClick={() => handleEdit(index)}
