@@ -1,5 +1,5 @@
-console.log("samaresh shil commit")
-console.log("samaresh shil commit")
-console.log("samaresh shil commit")
-console.log("samaresh shil commit")
-console.log("samaresh shil commit")
+function add(){
+    console.log("samaresh shil")
+}
+
+add()
